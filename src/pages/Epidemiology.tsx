@@ -6,7 +6,6 @@ import { StatBox } from '../components/StatBox'
 import { FilterDropdown } from '../components/FilterDropdown'
 import { BarChart } from '../components/BarChart'
 import { PieChart } from '../components/PieChart'
-import { PieChartWithDiseases } from '../components/PieChartWithDiseases'
 import { StackedBarChart } from '../components/StackedBarChart'
 import { LineChart } from '../components/LineChart'
 import { DemoNotice } from '../components/DemoNotice'
@@ -134,29 +133,10 @@ export function Epidemiology({ onNavigate }: EpidemiologyProps) {
     })).sort((a, b) => b.prevalence - a.prevalence)
   }, [filteredData])
 
-  const chartData2 = useMemo(() => {
-    // Check if country filter is applied
-    const hasCountryFilter = filters.country && filters.country.length > 0
-    const countryForData = hasCountryFilter && filters.country.length === 1 ? filters.country[0] : undefined
-    
-    const grouped = filteredData.reduce((acc: Record<string, { incidence: number; country?: string }>, d) => {
-      if (!acc[d.region]) {
-        acc[d.region] = { incidence: 0, country: countryForData }
-      }
-      acc[d.region].incidence += d.incidence
-      return acc
-    }, {})
-    return Object.entries(grouped).map(([region, data]) => ({
-      region,
-      incidence: data.incidence,
-      country: data.country,
-    }))
-  }, [filteredData, filters.country])
-
   // Combined chart data showing disease contributions within each region
   const chartData2WithDiseases = useMemo(() => {
     const hasCountryFilter = filters.country && filters.country.length > 0
-    const countryForData = hasCountryFilter && filters.country.length === 1 ? filters.country[0] : undefined
+    const countryForData = hasCountryFilter && filters.country && filters.country.length === 1 ? filters.country[0] : undefined
     
     const grouped = filteredData.reduce((acc: Record<string, Record<string, number>>, d) => {
       if (!acc[d.region]) {
@@ -278,12 +258,16 @@ export function Epidemiology({ onNavigate }: EpidemiologyProps) {
       .sort((a, b) => b.value - a.value)
   }, [filteredData])
 
-  const updateFilter = (key: keyof FilterOptions, value: string[] | string) => {
-    const newFilters = { ...filters, [key]: value }
+  const updateFilter = (key: keyof FilterOptions, value: string[] | string | number[] | number | (string | number)[]) => {
+    // Convert to string array or string based on type
+    const normalizedValue = Array.isArray(value) 
+      ? value.map(v => String(v))
+      : String(value)
+    const newFilters = { ...filters, [key]: normalizedValue }
     
     // If region filter changes, filter out countries that don't belong to selected regions
     if (key === 'region') {
-      const selectedRegions = Array.isArray(value) ? value : []
+      const selectedRegions = Array.isArray(normalizedValue) ? normalizedValue : []
       if (selectedRegions.length > 0) {
         const validCountries = new Set<string>()
         selectedRegions.forEach((region: string) => {
@@ -466,7 +450,7 @@ export function Epidemiology({ onNavigate }: EpidemiologyProps) {
             </InfoTooltip>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
-            {diseaseComparisonCharts.map((comparison, index) => (
+            {diseaseComparisonCharts.map((comparison, _index) => (
               <div key={comparison.disease} className={`p-3 rounded-lg h-[450px] ${isDark ? 'bg-navy-card' : 'bg-white border border-gray-200'}`}>
                 <div className="mb-2">
                   <InfoTooltip content={`• Shows regional distribution for ${comparison.disease}\n• Each slice represents a region\n• Slice size indicates proportion of total incidence\n• Identify regions with highest incidence rates\n• Compare regional contributions to disease burden`}>

@@ -6,7 +6,6 @@ import { StatBox } from '../components/StatBox'
 import { FilterDropdown } from '../components/FilterDropdown'
 import { BarChart } from '../components/BarChart'
 import { PieChart } from '../components/PieChart'
-import { PieChartWithDiseases } from '../components/PieChartWithDiseases'
 import { StackedBarChart } from '../components/StackedBarChart'
 import { LineChart } from '../components/LineChart'
 import { DemoNotice } from '../components/DemoNotice'
@@ -140,21 +139,6 @@ export function VaccinationRate({ onNavigate }: VaccinationRateProps) {
     })).sort((a, b) => b.vaccinationRate - a.vaccinationRate)
   }, [filteredData, hasCountryFilter, filters.country])
 
-  const chartData2 = useMemo(() => {
-    const countryForData = hasCountryFilter && filters.country && filters.country.length > 0 ? filters.country[0] : undefined
-    const grouped = filteredData.reduce((acc: Record<string, number>, d) => {
-      acc[d.region] = (acc[d.region] || 0) + d.vaccinationRate
-      return acc
-    }, {})
-    const total = Object.values(grouped).reduce((sum, val) => sum + val, 0)
-    return Object.entries(grouped).map(([region, rate]) => ({
-      region,
-      vaccinationRate: rate,
-      percentage: total > 0 ? (rate / total) * 100 : 0,
-      country: countryForData,
-    }))
-  }, [filteredData, hasCountryFilter, filters.country])
-
   // Combined chart data showing disease contributions within each region
   const chartData2WithDiseases = useMemo(() => {
     const countryForData = hasCountryFilter && filters.country && filters.country.length > 0 ? filters.country[0] : undefined
@@ -238,12 +222,16 @@ export function VaccinationRate({ onNavigate }: VaccinationRateProps) {
       .sort((a, b) => a.year - b.year)
   }, [filteredData, hasCountryFilter, filters.country])
 
-  const updateFilter = (key: keyof FilterOptions, value: string[] | string) => {
-    const newFilters = { ...filters, [key]: value }
+  const updateFilter = (key: keyof FilterOptions, value: string[] | string | number[] | number | (string | number)[]) => {
+    // Convert to string array or string based on type
+    const normalizedValue = Array.isArray(value) 
+      ? value.map(v => String(v))
+      : String(value)
+    const newFilters = { ...filters, [key]: normalizedValue }
     
     // If region filter changes, filter out countries that don't belong to selected regions
     if (key === 'region') {
-      const selectedRegions = Array.isArray(value) ? value : []
+      const selectedRegions = Array.isArray(normalizedValue) ? normalizedValue : []
       if (selectedRegions.length > 0) {
         const validCountries = new Set<string>()
         selectedRegions.forEach((region: string) => {

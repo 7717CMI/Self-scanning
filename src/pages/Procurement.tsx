@@ -197,25 +197,24 @@ export function Procurement({ onNavigate }: ProcurementProps) {
 
   // Procurement efficiency by region
   const procurementByRegion = useMemo(() => {
-    const countryForData = hasCountryFilter && filters.country && filters.country.length > 0 ? filters.country[0] : undefined
     const grouped = filteredData.reduce((acc: Record<string, Record<string, number>>, d) => {
-      if (!acc[d.procurement]) {
-        acc[d.procurement] = {}
+      if (!acc[d.region]) {
+        acc[d.region] = {}
       }
-      acc[d.procurement][d.region] = (acc[d.procurement][d.region] || 0) + d.qty
+      acc[d.region][d.procurement] = (acc[d.region][d.procurement] || 0) + d.qty
       return acc
     }, {})
-    const result: Array<{ region: string; procurement: string; qty: number; label: string; country?: string }> = []
-    Object.entries(grouped).forEach(([procurement, regions]) => {
-      Object.entries(regions).forEach(([region, qty]) => {
-        result.push({ 
-          region, 
-          procurement, 
-          qty, 
-          label: `${region} - ${procurement}`,
-          country: countryForData,
-        })
+    const result: Array<{ region: string; disease: string; label: string; [key: string]: any }> = []
+    Object.entries(grouped).forEach(([region, procurementData]) => {
+      const baseEntry: { region: string; disease: string; label: string; [key: string]: any } = {
+        region,
+        disease: '', // StackedBarChart requires disease field, but we use procurement as the grouping
+        label: region,
+      }
+      Object.entries(procurementData).forEach(([procurement, qty]) => {
+        baseEntry[procurement] = qty
       })
+      result.push(baseEntry)
     })
     return result
   }, [filteredData, hasCountryFilter, filters.country])
@@ -224,12 +223,16 @@ export function Procurement({ onNavigate }: ProcurementProps) {
     return [...new Set(filteredData.map(d => d.procurement))].sort()
   }, [filteredData])
 
-  const updateFilter = (key: keyof FilterOptions, value: string[] | string) => {
-    const newFilters = { ...filters, [key]: value }
+  const updateFilter = (key: keyof FilterOptions, value: string[] | string | number[] | number | (string | number)[]) => {
+    // Convert to string array or string based on type
+    const normalizedValue = Array.isArray(value) 
+      ? value.map(v => String(v))
+      : String(value)
+    const newFilters = { ...filters, [key]: normalizedValue }
     
     // If region filter changes, filter out countries that don't belong to selected regions
     if (key === 'region') {
-      const selectedRegions = Array.isArray(value) ? value : []
+      const selectedRegions = Array.isArray(normalizedValue) ? normalizedValue : []
       if (selectedRegions.length > 0) {
         const validCountries = new Set<string>()
         selectedRegions.forEach((region: string) => {

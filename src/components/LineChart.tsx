@@ -82,7 +82,6 @@ export function LineChart({ data, dataKeys, nameKey, colors = ['#0075FF', '#4FD1
 
   const CustomTooltip = ({ active, payload, label }: any) => {
     if (active && payload && payload.length) {
-      const valueLabel = isVolume ? 'Units' : (yAxisLabel || 'Value')
       const payloadData = payload[0]?.payload || {}
       const country = payloadData.country
       

@@ -152,7 +152,6 @@ export function BrandDemographic({ onNavigate }: BrandDemographicProps) {
   // Grouped options for brands (by disease)
   const groupedBrands = useMemo(() => {
     const diseaseMap = new Map<string, Set<string>>()
-    let availableBrands = [...new Set(data.map(d => d.brand))].sort()
     
     if (filters.disease && filters.disease.length > 0) {
       const relatedBrands = new Set<string>()
@@ -163,7 +162,6 @@ export function BrandDemographic({ onNavigate }: BrandDemographicProps) {
           }
         })
       })
-      availableBrands = Array.from(relatedBrands).sort()
       
       // Only show selected diseases
       filters.disease.forEach((disease: string) => {
@@ -297,12 +295,16 @@ export function BrandDemographic({ onNavigate }: BrandDemographicProps) {
     })
   }, [filteredData, hasCountryFilter, filters.country])
 
-  const updateFilter = (key: keyof FilterOptions, value: string[] | string) => {
-    const newFilters = { ...filters, [key]: value }
+  const updateFilter = (key: keyof FilterOptions, value: string[] | string | number[] | number | (string | number)[]) => {
+    // Convert to string array or string based on type
+    const normalizedValue = Array.isArray(value) 
+      ? value.map(v => String(v))
+      : String(value)
+    const newFilters = { ...filters, [key]: normalizedValue }
     
     // If region filter changes, filter out countries that don't belong to selected regions
     if (key === 'region') {
-      const selectedRegions = Array.isArray(value) ? value : []
+      const selectedRegions = Array.isArray(normalizedValue) ? normalizedValue : []
       if (selectedRegions.length > 0) {
         const validCountries = new Set<string>()
         selectedRegions.forEach((region: string) => {

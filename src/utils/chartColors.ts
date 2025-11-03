@@ -54,3 +54,4 @@ export function getChartColor(index: number): string {
   return DISTINCT_CHART_COLORS[index % DISTINCT_CHART_COLORS.length]
 }
 
+

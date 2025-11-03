@@ -7,7 +7,6 @@ import { FilterDropdown } from '../components/FilterDropdown'
 import { BarChart } from '../components/BarChart'
 import { PieChart } from '../components/PieChart'
 import { LineChart } from '../components/LineChart'
-import { StackedBarChart } from '../components/StackedBarChart'
 import { DemoNotice } from '../components/DemoNotice'
 import { useTheme } from '../context/ThemeContext'
 import { InfoTooltip } from '../components/InfoTooltip'
@@ -299,7 +298,6 @@ export function MSAComparison({ onNavigate }: MSAComparisonProps) {
   // Competitive positioning - brands by market value (weighted by recent performance)
   const competitivePosition = useMemo(() => {
     const countryForData = hasCountryFilter && filters.country && filters.country.length > 0 ? filters.country[0] : undefined
-    const currentYear = Math.max(...filteredData.map(d => d.year), 2035)
     const grouped = filteredData.reduce((acc: Record<string, number>, d) => {
       if (!acc[d.brand]) {
         acc[d.brand] = 0
@@ -315,12 +313,16 @@ export function MSAComparison({ onNavigate }: MSAComparisonProps) {
       .slice(0, 8)
   }, [filteredData, hasCountryFilter, filters.country])
 
-  const updateFilter = (key: keyof FilterOptions, value: string[] | string) => {
-    const newFilters = { ...filters, [key]: value }
+  const updateFilter = (key: keyof FilterOptions, value: string[] | string | number[] | number | (string | number)[]) => {
+    // Convert to string array or string based on type
+    const normalizedValue = Array.isArray(value) 
+      ? value.map(v => String(v))
+      : String(value)
+    const newFilters = { ...filters, [key]: normalizedValue }
     
     // If region filter changes, filter out countries that don't belong to selected regions
     if (key === 'region') {
-      const selectedRegions = Array.isArray(value) ? value : []
+      const selectedRegions = Array.isArray(normalizedValue) ? normalizedValue : []
       if (selectedRegions.length > 0) {
         const validCountries = new Set<string>()
         selectedRegions.forEach((region: string) => {

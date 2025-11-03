@@ -171,7 +171,7 @@ export function FilterDropdown({ label, value, onChange, options, multiple = tru
               </div>
             ) : groupedOptions && groupedOptions.length > 0 ? (
               // Render grouped options
-              groupedOptions.map((group, groupIndex) => (
+              groupedOptions.map((group) => (
                 <div key={group.group}>
                   {/* Group Header */}
                   <div className={`px-3 py-2 text-xs font-semibold uppercase tracking-wider sticky top-0 ${

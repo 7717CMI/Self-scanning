@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Activity, Heart, DollarSign, TrendingUp, PieChart, ShoppingCart, Pill, FlaskConical, ArrowRight, ArrowLeft } from 'lucide-react'
+import { Activity, Heart, DollarSign, TrendingUp, PieChart, ShoppingCart, Pill, FlaskConical, ArrowRight, ArrowLeft, LucideIcon } from 'lucide-react'
 import { DemoNotice } from '../components/DemoNotice'
 
 interface HomeProps {
@@ -10,7 +10,7 @@ interface HomeProps {
 interface Module {
   title: string
   subtitle: string
-  icon: React.ComponentType<{ size?: number; className?: string }>
+  icon: LucideIcon
   id: string
   gradient: string
 }
@@ -18,7 +18,7 @@ interface Module {
 interface Category {
   title: string
   description: string
-  icon: React.ComponentType<{ size?: number; className?: string }>
+  icon: LucideIcon
   modules: Module[]
   gradient: string
   bgGradient: string
@@ -186,7 +186,7 @@ export function Home({ onNavigate }: HomeProps) {
             </motion.div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-              {categories.map((category, categoryIndex) => {
+              {categories.map((category) => {
                 const CategoryIcon = category.icon
                 
                 return (

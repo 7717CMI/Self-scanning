@@ -6,7 +6,6 @@ import {
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
-  Legend,
   Cell,
 } from 'recharts'
 import { useTheme } from '../context/ThemeContext'
@@ -110,7 +109,7 @@ export function ScatterChart({ data, xDataKey, yDataKey, nameKey, xAxisLabel, yA
         />
         <Tooltip content={<CustomTooltip />} />
         <Scatter name="Data" data={data} fill="#0075FF">
-          {data.map((entry, index) => (
+          {data.map((_entry, index) => (
             <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
           ))}
         </Scatter>
