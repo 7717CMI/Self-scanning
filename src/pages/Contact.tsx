@@ -34,17 +34,6 @@ export function Contact({ onNavigate }: ContactProps) {
             </div>
           </div>
           <div className="flex items-start gap-4 p-6 bg-white dark:bg-navy-card rounded-lg border border-gray-200 dark:border-navy-light">
-            <MapPin className="text-electric-blue mt-1" size={24} />
-            <div>
-              <h3 className="font-semibold text-text-primary-light dark:text-text-primary-dark mb-1">Alternate Address</h3>
-              <p className="text-text-secondary-light dark:text-text-secondary-dark">
-                203, 2nd Floor, Bremen Business Centre<br />
-                Above Bank of India, Opposite Aundh Police Chowky<br />
-                Aundh Bridge, Aundh, Pune – 411007
-              </p>
-            </div>
-          </div>
-          <div className="flex items-start gap-4 p-6 bg-white dark:bg-navy-card rounded-lg border border-gray-200 dark:border-navy-light">
             <Phone className="text-electric-blue mt-1" size={24} />
             <div>
               <h3 className="font-semibold text-text-primary-light dark:text-text-primary-dark mb-1">Phone (India office)</h3>
