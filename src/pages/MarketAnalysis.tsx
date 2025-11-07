@@ -54,7 +54,16 @@ export function MarketAnalysis({ onNavigate }: MarketAnalysisProps) {
           const availableHandleLengths = [...new Set(generatedData.map(d => d.handleLength))].filter(Boolean).sort()
           const availableApplications = [...new Set(generatedData.map(d => d.application))].filter(Boolean).sort()
           const availableEndUsers = [...new Set(generatedData.map(d => d.endUser))].filter(Boolean).sort()
-          const year2025 = availableYears.includes(2025) ? [2025] : (availableYears.length > 0 ? [availableYears[availableYears.length - 1]] : [])
+          // Default to 2024 and 2025 if available, otherwise use available years
+          const defaultYears = availableYears.includes(2024) && availableYears.includes(2025)
+            ? [2024, 2025]
+            : availableYears.includes(2025)
+              ? [2025]
+              : availableYears.includes(2024)
+                ? [2024]
+                : availableYears.length > 0
+                  ? [availableYears[availableYears.length - 1]]
+                  : []
           const defaultCountries = availableCountries.length >= 2 && availableCountries.includes('USA') && availableCountries.includes('Canada')
             ? ['USA', 'Canada']
             : availableCountries.length >= 2
@@ -71,7 +80,7 @@ export function MarketAnalysis({ onNavigate }: MarketAnalysisProps) {
           const defaultEndUsers = availableEndUsers
           
           setFilters({
-            year: year2025.length > 0 ? year2025 : (availableYears.length > 0 ? [availableYears[0]] : []),
+            year: defaultYears,
             country: defaultCountries,
             productType: defaultProductTypes,
             bladeMaterial: defaultBladeMaterials,
