@@ -149,7 +149,7 @@ const riskExposureCategories = [
 ]
 
 const numberOfPersons = [
-  "1-2 persons", "3-5 persons", "6-10 persons", "11-20 persons", "21-50 persons", "50+ persons"
+  "1-2 users", "3-5 users", "6-10 users", "11-20 users", "21-50 users", "50+ users"
 ]
 
 const otherKeyInsights = [
@@ -388,9 +388,7 @@ export function generateExecutiveProtectionData(): ExecutiveProtectionData[] {
     const typeOfBusiness = randomElement(typesOfBusiness, random)
     const riskInvolved = randomElement(riskInvolvedSpecificToProtection, random)
     const riskCategory = randomElement(riskExposureCategories, random)
-    const numberOfPersons = randomElement([
-      "1-2 persons", "3-5 persons", "6-10 persons", "11-20 persons", "21-50 persons", "50+ persons"
-    ], random)
+    const numberOfUsers = randomElement(numberOfPersons, random)
     const otherInsights = randomElement(otherKeyInsights, random)
     
     const firstName = randomElement(firstNames, random)
@@ -426,7 +424,7 @@ export function generateExecutiveProtectionData(): ExecutiveProtectionData[] {
       typeOfBusiness,
       riskInvolvedSpecificToProtection: riskInvolved,
       riskExposureCategory: riskCategory,
-      numberOfPersonsRequiredProtectionService: numberOfPersons,
+      numberOfPersonsRequiredProtectionService: numberOfUsers,
       otherKeyInsights: otherInsights,
       keyContactPerson,
       designationRole: designation,

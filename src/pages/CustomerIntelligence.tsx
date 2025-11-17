@@ -311,7 +311,7 @@ export function CustomerIntelligence({ onNavigate }: CustomerIntelligenceProps) 
                     Risk Exposure Category
                   </th>
                   <th className={`px-3 py-2 text-center font-semibold ${isDark ? 'bg-blue-900' : 'bg-blue-100'} text-text-primary-light dark:text-text-primary-dark border-r ${isDark ? 'border-navy-light' : 'border-gray-300'}`}>
-                    Number/Count of Person Required Protection Service
+                    Number/Count of Users Required Protection Service
                   </th>
                   <th className={`px-3 py-2 text-center font-semibold ${isDark ? 'bg-blue-900' : 'bg-blue-100'} text-text-primary-light dark:text-text-primary-dark border-r ${isDark ? 'border-navy-light' : 'border-gray-300'}`}>
                     Other Key Insights
@@ -446,7 +446,7 @@ export function CustomerIntelligence({ onNavigate }: CustomerIntelligenceProps) 
                     Risk Exposure Category
                   </th>
                   <th className={`px-3 py-2 text-center font-semibold ${isDark ? 'bg-blue-900' : 'bg-blue-100'} text-text-primary-light dark:text-text-primary-dark border-r ${isDark ? 'border-navy-light' : 'border-gray-300'}`}>
-                    Number/Count of Person Required Protection Service
+                    Number/Count of Users Required Protection Service
                   </th>
                   <th className={`px-3 py-2 text-center font-semibold ${isDark ? 'bg-blue-900' : 'bg-blue-100'} text-text-primary-light dark:text-text-primary-dark border-r ${isDark ? 'border-navy-light' : 'border-gray-300'}`}>
                     Other Key Insights
@@ -614,7 +614,7 @@ export function CustomerIntelligence({ onNavigate }: CustomerIntelligenceProps) 
                     Risk Category
                   </th>
                   <th className={`px-2 py-2 text-center font-semibold ${isDark ? 'bg-blue-900' : 'bg-blue-100'} text-text-primary-light dark:text-text-primary-dark border-r ${isDark ? 'border-navy-light' : 'border-gray-300'}`}>
-                    Number of Persons
+                    Number of Users
                   </th>
                   <th className={`px-2 py-2 text-center font-semibold ${isDark ? 'bg-blue-900' : 'bg-blue-100'} text-text-primary-light dark:text-text-primary-dark border-r ${isDark ? 'border-navy-light' : 'border-gray-300'}`}>
                     Other Key Insights
