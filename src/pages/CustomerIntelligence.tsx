@@ -9,45 +9,37 @@ interface CustomerIntelligenceProps {
 
 type Proposition = 'proposition1' | 'proposition2' | 'proposition3'
 
-interface DistributorData {
+interface CustomerData {
   sNo: number
-  companyName: string
-  yearEstablished: string
-  headquarters: string
-  citiesRegionsCovered: string
-  ownershipType: string
-  noOfEmployees: string
-  revenueTurnover: string
+  customerName: string
+  parentGroup: string
+  retailFormat: string
+  regionCountry: string
+  storeFootprint: string
+  selfScanningStatus: string
   keyContact: string
   designation: string
   emailAddress: string
   phoneWhatsApp: string
   linkedinProfile: string
   websiteURL: string
-  // Product Portfolio fields (for Proposition 2 & 3)
-  keyProductCategories?: string
-  productSegmentCapsules?: string
-  priceSegment?: string
-  // Brands Distributed fields (for Proposition 3)
-  keyInternationalLocalBrands?: string
-  exclusiveNonExclusivePartnership?: string
-  durationOfBrandPartnerships?: string
-  // Distribution Channels (for Proposition 3)
-  onlineChannel?: string
-  offlineChannel?: string
-  // Regional Coverage (for Proposition 3)
-  northIndia?: string
-  westIndia?: string
-  southIndia?: string
-  eastIndia?: string
-  // SWOT Analysis (for Proposition 3)
-  strengths?: string
-  weaknesses?: string
-  opportunities?: string
-  threats?: string
-  // Future Plans (for Proposition 3)
-  futureExpansionPlans?: string
-  competitiveBenchmarking?: string
+  primaryMotivation: string
+  upcomingTriggers: string
+  shrinkRiskSensitivity: string
+  // Purchasing Behaviour fields (for Proposition 2 & 3)
+  decisionMakers?: string
+  procurementModel?: string
+  budgetApproach?: string
+  // Solution Requirements fields (for Proposition 3)
+  preferredSolutionType?: string
+  preferredModelType?: string
+  preferredTechnology?: string
+  integrationRequirements?: string
+  deploymentIntensity?: string
+  serviceExpectations?: string
+  otherConstraints?: string
+  // CMI Insights fields (for Proposition 3)
+  customerBenchmarking?: string
   additionalComments?: string
 }
 
@@ -75,761 +67,357 @@ export function CustomerIntelligence({ onNavigate }: CustomerIntelligenceProps) 
   }, [activeProposition])
 
   // Sample data based on the image
-  const proposition1Data: DistributorData[] = [
+  const proposition1Data: CustomerData[] = [
     {
       sNo: 1,
-      companyName: 'Zenicure Labs',
-      yearEstablished: '2018',
-      headquarters: 'Haryana, India',
-      citiesRegionsCovered: 'PAN India',
-      ownershipType: 'Local (Indian partnership / firm)',
-      noOfEmployees: '11 to 25',
-      revenueTurnover: '5 to 25',
-      keyContact: 'Eshu Bansal',
-      designation: 'CEO',
-      emailAddress: 'NA',
-      phoneWhatsApp: '7942841141',
-      linkedinProfile: 'linkedin.com/in/eshu-bansal',
-      websiteURL: 'www.zenicurelabs.in/profile.html'
+      customerName: 'Customer 1',
+      parentGroup: 'xx',
+      retailFormat: 'xx',
+      regionCountry: 'xx',
+      storeFootprint: 'xx',
+      selfScanningStatus: 'xx',
+      keyContact: 'xx',
+      designation: 'xx',
+      emailAddress: 'xx',
+      phoneWhatsApp: 'xx',
+      linkedinProfile: 'xx',
+      websiteURL: 'xx',
+      primaryMotivation: 'xx',
+      upcomingTriggers: 'xx',
+      shrinkRiskSensitivity: 'xx'
     },
     {
       sNo: 2,
-      companyName: 'Sanjeevani Distributors',
-      yearEstablished: '2004',
-      headquarters: 'Gujarat, India',
-      citiesRegionsCovered: 'PAN India',
-      ownershipType: 'Local (Indian partnership / firm)',
-      noOfEmployees: '10',
-      revenueTurnover: '1.5',
-      keyContact: 'Vijay Sandis',
-      designation: 'CEO',
-      emailAddress: 'NA',
-      phoneWhatsApp: '7942551632',
-      linkedinProfile: 'NA',
-      websiteURL: 'NA'
+      customerName: 'Customer 2',
+      parentGroup: 'xx',
+      retailFormat: 'xx',
+      regionCountry: 'xx',
+      storeFootprint: 'xx',
+      selfScanningStatus: 'xx',
+      keyContact: 'xx',
+      designation: 'xx',
+      emailAddress: 'xx',
+      phoneWhatsApp: 'xx',
+      linkedinProfile: 'xx',
+      websiteURL: 'xx',
+      primaryMotivation: 'xx',
+      upcomingTriggers: 'xx',
+      shrinkRiskSensitivity: 'xx'
     },
     {
       sNo: 3,
-      companyName: 'Distributor 3',
-      yearEstablished: 'NN',
-      headquarters: 'NN',
-      citiesRegionsCovered: 'NN',
-      ownershipType: 'NN',
-      noOfEmployees: 'NN',
-      revenueTurnover: 'NN',
-      keyContact: 'NN',
-      designation: 'NN',
-      emailAddress: 'NN',
-      phoneWhatsApp: 'NN',
-      linkedinProfile: 'NN',
-      websiteURL: 'NN'
+      customerName: 'Customer 3',
+      parentGroup: 'xx',
+      retailFormat: 'xx',
+      regionCountry: 'xx',
+      storeFootprint: 'xx',
+      selfScanningStatus: 'xx',
+      keyContact: 'xx',
+      designation: 'xx',
+      emailAddress: 'xx',
+      phoneWhatsApp: 'xx',
+      linkedinProfile: 'xx',
+      websiteURL: 'xx',
+      primaryMotivation: 'xx',
+      upcomingTriggers: 'xx',
+      shrinkRiskSensitivity: 'xx'
     },
     {
       sNo: 4,
-      companyName: 'Distributor 4',
-      yearEstablished: 'NN',
-      headquarters: 'NN',
-      citiesRegionsCovered: 'NN',
-      ownershipType: 'NN',
-      noOfEmployees: 'NN',
-      revenueTurnover: 'NN',
-      keyContact: 'NN',
-      designation: 'NN',
-      emailAddress: 'NN',
-      phoneWhatsApp: 'NN',
-      linkedinProfile: 'NN',
-      websiteURL: 'NN'
+      customerName: 'Customer 4',
+      parentGroup: 'xx',
+      retailFormat: 'xx',
+      regionCountry: 'xx',
+      storeFootprint: 'xx',
+      selfScanningStatus: 'xx',
+      keyContact: 'xx',
+      designation: 'xx',
+      emailAddress: 'xx',
+      phoneWhatsApp: 'xx',
+      linkedinProfile: 'xx',
+      websiteURL: 'xx',
+      primaryMotivation: 'xx',
+      upcomingTriggers: 'xx',
+      shrinkRiskSensitivity: 'xx'
     },
     {
       sNo: 5,
-      companyName: 'Distributor 5',
-      yearEstablished: 'NN',
-      headquarters: 'NN',
-      citiesRegionsCovered: 'NN',
-      ownershipType: 'NN',
-      noOfEmployees: 'NN',
-      revenueTurnover: 'NN',
-      keyContact: 'NN',
-      designation: 'NN',
-      emailAddress: 'NN',
-      phoneWhatsApp: 'NN',
-      linkedinProfile: 'NN',
-      websiteURL: 'NN'
+      customerName: 'Customer 5',
+      parentGroup: 'xx',
+      retailFormat: 'xx',
+      regionCountry: 'xx',
+      storeFootprint: 'xx',
+      selfScanningStatus: 'xx',
+      keyContact: 'xx',
+      designation: 'xx',
+      emailAddress: 'xx',
+      phoneWhatsApp: 'xx',
+      linkedinProfile: 'xx',
+      websiteURL: 'xx',
+      primaryMotivation: 'xx',
+      upcomingTriggers: 'xx',
+      shrinkRiskSensitivity: 'xx'
     },
     {
       sNo: 6,
-      companyName: 'Distributor 6',
-      yearEstablished: 'NN',
-      headquarters: 'NN',
-      citiesRegionsCovered: 'NN',
-      ownershipType: 'NN',
-      noOfEmployees: 'NN',
-      revenueTurnover: 'NN',
-      keyContact: 'NN',
-      designation: 'NN',
-      emailAddress: 'NN',
-      phoneWhatsApp: 'NN',
-      linkedinProfile: 'NN',
-      websiteURL: 'NN'
+      customerName: 'Customer 6',
+      parentGroup: 'xx',
+      retailFormat: 'xx',
+      regionCountry: 'xx',
+      storeFootprint: 'xx',
+      selfScanningStatus: 'xx',
+      keyContact: 'xx',
+      designation: 'xx',
+      emailAddress: 'xx',
+      phoneWhatsApp: 'xx',
+      linkedinProfile: 'xx',
+      websiteURL: 'xx',
+      primaryMotivation: 'xx',
+      upcomingTriggers: 'xx',
+      shrinkRiskSensitivity: 'xx'
     },
     {
       sNo: 7,
-      companyName: 'Distributor 7',
-      yearEstablished: 'NN',
-      headquarters: 'NN',
-      citiesRegionsCovered: 'NN',
-      ownershipType: 'NN',
-      noOfEmployees: 'NN',
-      revenueTurnover: 'NN',
-      keyContact: 'NN',
-      designation: 'NN',
-      emailAddress: 'NN',
-      phoneWhatsApp: 'NN',
-      linkedinProfile: 'NN',
-      websiteURL: 'NN'
+      customerName: 'Customer 7',
+      parentGroup: 'xx',
+      retailFormat: 'xx',
+      regionCountry: 'xx',
+      storeFootprint: 'xx',
+      selfScanningStatus: 'xx',
+      keyContact: 'xx',
+      designation: 'xx',
+      emailAddress: 'xx',
+      phoneWhatsApp: 'xx',
+      linkedinProfile: 'xx',
+      websiteURL: 'xx',
+      primaryMotivation: 'xx',
+      upcomingTriggers: 'xx',
+      shrinkRiskSensitivity: 'xx'
     },
     {
       sNo: 8,
-      companyName: 'Distributor 8',
-      yearEstablished: 'NN',
-      headquarters: 'NN',
-      citiesRegionsCovered: 'NN',
-      ownershipType: 'NN',
-      noOfEmployees: 'NN',
-      revenueTurnover: 'NN',
-      keyContact: 'NN',
-      designation: 'NN',
-      emailAddress: 'NN',
-      phoneWhatsApp: 'NN',
-      linkedinProfile: 'NN',
-      websiteURL: 'NN'
+      customerName: 'Customer 8',
+      parentGroup: 'xx',
+      retailFormat: 'xx',
+      regionCountry: 'xx',
+      storeFootprint: 'xx',
+      selfScanningStatus: 'xx',
+      keyContact: 'xx',
+      designation: 'xx',
+      emailAddress: 'xx',
+      phoneWhatsApp: 'xx',
+      linkedinProfile: 'xx',
+      websiteURL: 'xx',
+      primaryMotivation: 'xx',
+      upcomingTriggers: 'xx',
+      shrinkRiskSensitivity: 'xx'
     },
     {
       sNo: 9,
-      companyName: 'Distributor 9',
-      yearEstablished: 'NN',
-      headquarters: 'NN',
-      citiesRegionsCovered: 'NN',
-      ownershipType: 'NN',
-      noOfEmployees: 'NN',
-      revenueTurnover: 'NN',
-      keyContact: 'NN',
-      designation: 'NN',
-      emailAddress: 'NN',
-      phoneWhatsApp: 'NN',
-      linkedinProfile: 'NN',
-      websiteURL: 'NN'
-    }
-  ]
-
-  // Proposition 2 data with Product Portfolio
-  const proposition2Data: DistributorData[] = [
-    {
-      sNo: 1,
-      companyName: 'Zenicure Labs',
-      yearEstablished: '2018',
-      headquarters: 'Haryana, India',
-      citiesRegionsCovered: 'PAN India',
-      ownershipType: 'Local (Indian partnership / firm)',
-      noOfEmployees: '11 to 25',
-      revenueTurnover: '5 to 25',
-      keyContact: 'Eshu Bansal',
-      designation: 'CEO',
-      emailAddress: 'NA',
-      phoneWhatsApp: '7942841141',
-      linkedinProfile: 'linkedin.com/in/eshu-bansal',
-      websiteURL: 'www.zenicurelabs.in/profile.html',
-      keyProductCategories: 'Lactobacillus (Lactobacillus acidophilus)',
-      productSegmentCapsules: 'Capsules',
-      priceSegment: 'Mid'
-    },
-    {
-      sNo: 2,
-      companyName: 'Sanjeevani Distributors',
-      yearEstablished: '2004',
-      headquarters: 'Gujarat, India',
-      citiesRegionsCovered: 'PAN India',
-      ownershipType: 'Local (Indian partnership / firm)',
-      noOfEmployees: '10',
-      revenueTurnover: '1.5',
-      keyContact: 'Vijay Sandis',
-      designation: 'CEO',
-      emailAddress: 'NA',
-      phoneWhatsApp: '7942551632',
-      linkedinProfile: 'NA',
-      websiteURL: 'NA',
-      keyProductCategories: 'Saccharomyces (Bifidobacterium)',
-      productSegmentCapsules: 'Sachet, Capsules, Powder',
-      priceSegment: 'Mid'
-    },
-    {
-      sNo: 3,
-      companyName: 'Distributor 3',
-      yearEstablished: 'NN',
-      headquarters: 'NN',
-      citiesRegionsCovered: 'NN',
-      ownershipType: 'NN',
-      noOfEmployees: 'NN',
-      revenueTurnover: 'NN',
-      keyContact: 'NN',
-      designation: 'NN',
-      emailAddress: 'NN',
-      phoneWhatsApp: 'NN',
-      linkedinProfile: 'NN',
-      websiteURL: 'NN',
-      keyProductCategories: 'NN',
-      productSegmentCapsules: 'NN',
-      priceSegment: 'NN'
-    },
-    {
-      sNo: 4,
-      companyName: 'Distributor 4',
-      yearEstablished: 'NN',
-      headquarters: 'NN',
-      citiesRegionsCovered: 'NN',
-      ownershipType: 'NN',
-      noOfEmployees: 'NN',
-      revenueTurnover: 'NN',
-      keyContact: 'NN',
-      designation: 'NN',
-      emailAddress: 'NN',
-      phoneWhatsApp: 'NN',
-      linkedinProfile: 'NN',
-      websiteURL: 'NN',
-      keyProductCategories: 'NN',
-      productSegmentCapsules: 'NN',
-      priceSegment: 'NN'
-    },
-    {
-      sNo: 5,
-      companyName: 'Distributor 5',
-      yearEstablished: 'NN',
-      headquarters: 'NN',
-      citiesRegionsCovered: 'NN',
-      ownershipType: 'NN',
-      noOfEmployees: 'NN',
-      revenueTurnover: 'NN',
-      keyContact: 'NN',
-      designation: 'NN',
-      emailAddress: 'NN',
-      phoneWhatsApp: 'NN',
-      linkedinProfile: 'NN',
-      websiteURL: 'NN',
-      keyProductCategories: 'NN',
-      productSegmentCapsules: 'NN',
-      priceSegment: 'NN'
-    },
-    {
-      sNo: 6,
-      companyName: 'Distributor 6',
-      yearEstablished: 'NN',
-      headquarters: 'NN',
-      citiesRegionsCovered: 'NN',
-      ownershipType: 'NN',
-      noOfEmployees: 'NN',
-      revenueTurnover: 'NN',
-      keyContact: 'NN',
-      designation: 'NN',
-      emailAddress: 'NN',
-      phoneWhatsApp: 'NN',
-      linkedinProfile: 'NN',
-      websiteURL: 'NN',
-      keyProductCategories: 'NN',
-      productSegmentCapsules: 'NN',
-      priceSegment: 'NN'
-    },
-    {
-      sNo: 7,
-      companyName: 'Distributor 7',
-      yearEstablished: 'NN',
-      headquarters: 'NN',
-      citiesRegionsCovered: 'NN',
-      ownershipType: 'NN',
-      noOfEmployees: 'NN',
-      revenueTurnover: 'NN',
-      keyContact: 'NN',
-      designation: 'NN',
-      emailAddress: 'NN',
-      phoneWhatsApp: 'NN',
-      linkedinProfile: 'NN',
-      websiteURL: 'NN',
-      keyProductCategories: 'NN',
-      productSegmentCapsules: 'NN',
-      priceSegment: 'NN'
-    },
-    {
-      sNo: 8,
-      companyName: 'Distributor 8',
-      yearEstablished: 'NN',
-      headquarters: 'NN',
-      citiesRegionsCovered: 'NN',
-      ownershipType: 'NN',
-      noOfEmployees: 'NN',
-      revenueTurnover: 'NN',
-      keyContact: 'NN',
-      designation: 'NN',
-      emailAddress: 'NN',
-      phoneWhatsApp: 'NN',
-      linkedinProfile: 'NN',
-      websiteURL: 'NN',
-      keyProductCategories: 'NN',
-      productSegmentCapsules: 'NN',
-      priceSegment: 'NN'
-    },
-    {
-      sNo: 9,
-      companyName: 'Distributor 9',
-      yearEstablished: 'NN',
-      headquarters: 'NN',
-      citiesRegionsCovered: 'NN',
-      ownershipType: 'NN',
-      noOfEmployees: 'NN',
-      revenueTurnover: 'NN',
-      keyContact: 'NN',
-      designation: 'NN',
-      emailAddress: 'NN',
-      phoneWhatsApp: 'NN',
-      linkedinProfile: 'NN',
-      websiteURL: 'NN',
-      keyProductCategories: 'NN',
-      productSegmentCapsules: 'NN',
-      priceSegment: 'NN'
+      customerName: 'Customer 9',
+      parentGroup: 'xx',
+      retailFormat: 'xx',
+      regionCountry: 'xx',
+      storeFootprint: 'xx',
+      selfScanningStatus: 'xx',
+      keyContact: 'xx',
+      designation: 'xx',
+      emailAddress: 'xx',
+      phoneWhatsApp: 'xx',
+      linkedinProfile: 'xx',
+      websiteURL: 'xx',
+      primaryMotivation: 'xx',
+      upcomingTriggers: 'xx',
+      shrinkRiskSensitivity: 'xx'
     },
     {
       sNo: 10,
-      companyName: 'Distributor 10',
-      yearEstablished: 'NN',
-      headquarters: 'NN',
-      citiesRegionsCovered: 'NN',
-      ownershipType: 'NN',
-      noOfEmployees: 'NN',
-      revenueTurnover: 'NN',
-      keyContact: 'NN',
-      designation: 'NN',
-      emailAddress: 'NN',
-      phoneWhatsApp: 'NN',
-      linkedinProfile: 'NN',
-      websiteURL: 'NN',
-      keyProductCategories: 'NN',
-      productSegmentCapsules: 'NN',
-      priceSegment: 'NN'
-    }
-  ]
-
-  // Proposition 3 data with all sections
-  const proposition3Data: DistributorData[] = [
-    {
-      sNo: 1,
-      companyName: 'Zenicure Labs',
-      yearEstablished: '2018',
-      headquarters: 'Haryana, India',
-      citiesRegionsCovered: 'PAN India',
-      ownershipType: 'Local (Indian partnership / firm)',
-      noOfEmployees: '11 to 25',
-      revenueTurnover: '5 to 25',
-      keyContact: 'Eshu Bansal',
-      designation: 'CEO',
-      emailAddress: 'NA',
-      phoneWhatsApp: '8E-09',
-      linkedinProfile: 'linkedin.com/in/eshu-bansal',
-      websiteURL: 'https://www.zenicurelabs.in/profile.html',
-      keyProductCategories: 'Lactobacillus and Bifidobacterium',
-      productSegmentCapsules: 'Capsules',
-      priceSegment: 'Mid',
-      keyInternationalLocalBrands: 'Local',
-      exclusiveNonExclusivePartnership: 'NA',
-      durationOfBrandPartnerships: 'NA',
-      onlineChannel: 'Yes (IndiaMART)',
-      offlineChannel: 'Retail pharmacies, and local distribution',
-      northIndia: 'Yes',
-      westIndia: 'Yes',
-      southIndia: 'Yes',
-      eastIndia: 'Yes',
-      strengths: 'Wide Product Portfolio: Offers a variety of products, including tablets, capsules, syrups, and injectables, catering to diverse needs. Broad national distribution network. Focus on health supplements.',
-      weaknesses: 'Lack of Clear Branding for Probiotics: Limited public information on specific probiotics brands they distribute, making it Limited publicly available information. No clear digital presence or e-commerce focus.',
-      opportunities: 'E-commerce Expansion: With the increasing trend of online shopping, they can tap into e-commerce platforms to distribute probiotics and other products. Expanding probiotics offerings as the demand for gut health grows in India. Potential for partnerships with international brands.',
-      threats: 'Price Sensitivity: The probiotics market is price-sensitive, and maintaining competitive pricing while ensuring quality can be challenging. Intense competition in the health supplement and probiotics market. Regulatory challenges in supplement distribution.',
-      futureExpansionPlans: 'Yes',
-      competitiveBenchmarking: 'Top-tier / Mid-tier / Niche Emerging national-distributor / wholesaler / Likely Mid-tier distributor',
-      additionalComments: 'NA'
-    },
-    {
-      sNo: 2,
-      companyName: 'Sanjeevani Distributors',
-      yearEstablished: '2004',
-      headquarters: 'Gujarat, India',
-      citiesRegionsCovered: 'PAN India',
-      ownershipType: 'Local (Indian partnership / firm)',
-      noOfEmployees: '10',
-      revenueTurnover: '1.5',
-      keyContact: 'Vijay Sandis',
-      designation: 'CEO',
-      emailAddress: 'NA',
-      phoneWhatsApp: '8E-09',
-      linkedinProfile: 'NA',
-      websiteURL: 'NA',
-      keyProductCategories: 'Saccharomyces, Bifidobacterium, Lactobacillus',
-      productSegmentCapsules: 'Sachet, Capsules, Powder',
-      priceSegment: 'Mid',
-      keyInternationalLocalBrands: 'Local',
-      exclusiveNonExclusivePartnership: 'NA',
-      durationOfBrandPartnerships: 'NA',
-      onlineChannel: 'Yes (IndiaMART)',
-      offlineChannel: 'Retail pharmacies, and local distribution',
-      northIndia: 'Yes',
-      westIndia: 'Yes',
-      southIndia: 'Yes',
-      eastIndia: 'Yes',
-      strengths: 'NN',
-      weaknesses: 'NN',
-      opportunities: 'NN',
-      threats: 'NN',
-      futureExpansionPlans: 'Yes',
-      competitiveBenchmarking: 'Likely Mid-tier distributor',
-      additionalComments: 'NA'
-    },
-    {
-      sNo: 3,
-      companyName: 'Distributor 3',
-      yearEstablished: 'NN',
-      headquarters: 'NN',
-      citiesRegionsCovered: 'NN',
-      ownershipType: 'NN',
-      noOfEmployees: 'NN',
-      revenueTurnover: 'NN',
-      keyContact: 'NN',
-      designation: 'NN',
-      emailAddress: 'NN',
-      phoneWhatsApp: 'NN',
-      linkedinProfile: 'NN',
-      websiteURL: 'NN',
-      keyProductCategories: 'NN',
-      productSegmentCapsules: 'NN',
-      priceSegment: 'NN',
-      keyInternationalLocalBrands: 'NN',
-      exclusiveNonExclusivePartnership: 'NN',
-      durationOfBrandPartnerships: 'NN',
-      onlineChannel: 'NN',
-      offlineChannel: 'NN',
-      northIndia: 'NN',
-      westIndia: 'NN',
-      southIndia: 'NN',
-      eastIndia: 'NN',
-      strengths: 'NN',
-      weaknesses: 'NN',
-      opportunities: 'NN',
-      threats: 'NN',
-      futureExpansionPlans: 'NN',
-      competitiveBenchmarking: 'NN',
-      additionalComments: 'NN'
-    },
-    {
-      sNo: 4,
-      companyName: 'Distributor 4',
-      yearEstablished: 'NN',
-      headquarters: 'NN',
-      citiesRegionsCovered: 'NN',
-      ownershipType: 'NN',
-      noOfEmployees: 'NN',
-      revenueTurnover: 'NN',
-      keyContact: 'NN',
-      designation: 'NN',
-      emailAddress: 'NN',
-      phoneWhatsApp: 'NN',
-      linkedinProfile: 'NN',
-      websiteURL: 'NN',
-      keyProductCategories: 'NN',
-      productSegmentCapsules: 'NN',
-      priceSegment: 'NN',
-      internationalNicheBrands: 'NN',
-      durationOfPartnership: 'NN',
-      onlineChannel: 'NN',
-      offlineChannel: 'NN',
-      northIndia: 'NN',
-      westIndia: 'NN',
-      southIndia: 'NN',
-      eastIndia: 'NN',
-      strengths: 'NN',
-      weaknesses: 'NN',
-      opportunities: 'NN',
-      threats: 'NN',
-      futureExpansionPlans: 'NN',
-      competitiveBenchmarking: 'NN',
-      additionalComments: 'NN'
-    },
-    {
-      sNo: 5,
-      companyName: 'Distributor 5',
-      yearEstablished: 'NN',
-      headquarters: 'NN',
-      citiesRegionsCovered: 'NN',
-      ownershipType: 'NN',
-      noOfEmployees: 'NN',
-      revenueTurnover: 'NN',
-      keyContact: 'NN',
-      designation: 'NN',
-      emailAddress: 'NN',
-      phoneWhatsApp: 'NN',
-      linkedinProfile: 'NN',
-      websiteURL: 'NN',
-      keyProductCategories: 'NN',
-      productSegmentCapsules: 'NN',
-      priceSegment: 'NN',
-      internationalNicheBrands: 'NN',
-      durationOfPartnership: 'NN',
-      onlineChannel: 'NN',
-      offlineChannel: 'NN',
-      northIndia: 'NN',
-      westIndia: 'NN',
-      southIndia: 'NN',
-      eastIndia: 'NN',
-      strengths: 'NN',
-      weaknesses: 'NN',
-      opportunities: 'NN',
-      threats: 'NN',
-      futureExpansionPlans: 'NN',
-      competitiveBenchmarking: 'NN',
-      additionalComments: 'NN'
-    },
-    {
-      sNo: 6,
-      companyName: 'Distributor 6',
-      yearEstablished: 'NN',
-      headquarters: 'NN',
-      citiesRegionsCovered: 'NN',
-      ownershipType: 'NN',
-      noOfEmployees: 'NN',
-      revenueTurnover: 'NN',
-      keyContact: 'NN',
-      designation: 'NN',
-      emailAddress: 'NN',
-      phoneWhatsApp: 'NN',
-      linkedinProfile: 'NN',
-      websiteURL: 'NN',
-      keyProductCategories: 'NN',
-      productSegmentCapsules: 'NN',
-      priceSegment: 'NN',
-      internationalNicheBrands: 'NN',
-      durationOfPartnership: 'NN',
-      onlineChannel: 'NN',
-      offlineChannel: 'NN',
-      northIndia: 'NN',
-      westIndia: 'NN',
-      southIndia: 'NN',
-      eastIndia: 'NN',
-      strengths: 'NN',
-      weaknesses: 'NN',
-      opportunities: 'NN',
-      threats: 'NN',
-      futureExpansionPlans: 'NN',
-      competitiveBenchmarking: 'NN',
-      additionalComments: 'NN'
-    },
-    {
-      sNo: 7,
-      companyName: 'Distributor 7',
-      yearEstablished: 'NN',
-      headquarters: 'NN',
-      citiesRegionsCovered: 'NN',
-      ownershipType: 'NN',
-      noOfEmployees: 'NN',
-      revenueTurnover: 'NN',
-      keyContact: 'NN',
-      designation: 'NN',
-      emailAddress: 'NN',
-      phoneWhatsApp: 'NN',
-      linkedinProfile: 'NN',
-      websiteURL: 'NN',
-      keyProductCategories: 'NN',
-      productSegmentCapsules: 'NN',
-      priceSegment: 'NN',
-      internationalNicheBrands: 'NN',
-      durationOfPartnership: 'NN',
-      onlineChannel: 'NN',
-      offlineChannel: 'NN',
-      northIndia: 'NN',
-      westIndia: 'NN',
-      southIndia: 'NN',
-      eastIndia: 'NN',
-      strengths: 'NN',
-      weaknesses: 'NN',
-      opportunities: 'NN',
-      threats: 'NN',
-      futureExpansionPlans: 'NN',
-      competitiveBenchmarking: 'NN',
-      additionalComments: 'NN'
-    },
-    {
-      sNo: 8,
-      companyName: 'Distributor 8',
-      yearEstablished: 'NN',
-      headquarters: 'NN',
-      citiesRegionsCovered: 'NN',
-      ownershipType: 'NN',
-      noOfEmployees: 'NN',
-      revenueTurnover: 'NN',
-      keyContact: 'NN',
-      designation: 'NN',
-      emailAddress: 'NN',
-      phoneWhatsApp: 'NN',
-      linkedinProfile: 'NN',
-      websiteURL: 'NN',
-      keyProductCategories: 'NN',
-      productSegmentCapsules: 'NN',
-      priceSegment: 'NN',
-      internationalNicheBrands: 'NN',
-      durationOfPartnership: 'NN',
-      onlineChannel: 'NN',
-      offlineChannel: 'NN',
-      northIndia: 'NN',
-      westIndia: 'NN',
-      southIndia: 'NN',
-      eastIndia: 'NN',
-      strengths: 'NN',
-      weaknesses: 'NN',
-      opportunities: 'NN',
-      threats: 'NN',
-      futureExpansionPlans: 'NN',
-      competitiveBenchmarking: 'NN',
-      additionalComments: 'NN'
-    },
-    {
-      sNo: 9,
-      companyName: 'Distributor 9',
-      yearEstablished: 'NN',
-      headquarters: 'NN',
-      citiesRegionsCovered: 'NN',
-      ownershipType: 'NN',
-      noOfEmployees: 'NN',
-      revenueTurnover: 'NN',
-      keyContact: 'NN',
-      designation: 'NN',
-      emailAddress: 'NN',
-      phoneWhatsApp: 'NN',
-      linkedinProfile: 'NN',
-      websiteURL: 'NN',
-      keyProductCategories: 'NN',
-      productSegmentCapsules: 'NN',
-      priceSegment: 'NN',
-      internationalNicheBrands: 'NN',
-      durationOfPartnership: 'NN',
-      onlineChannel: 'NN',
-      offlineChannel: 'NN',
-      northIndia: 'NN',
-      westIndia: 'NN',
-      southIndia: 'NN',
-      eastIndia: 'NN',
-      strengths: 'NN',
-      weaknesses: 'NN',
-      opportunities: 'NN',
-      threats: 'NN',
-      futureExpansionPlans: 'NN',
-      competitiveBenchmarking: 'NN',
-      additionalComments: 'NN'
-    },
-    {
-      sNo: 10,
-      companyName: 'Distributor 10',
-      yearEstablished: 'NN',
-      headquarters: 'NN',
-      citiesRegionsCovered: 'NN',
-      ownershipType: 'NN',
-      noOfEmployees: 'NN',
-      revenueTurnover: 'NN',
-      keyContact: 'NN',
-      designation: 'NN',
-      emailAddress: 'NN',
-      phoneWhatsApp: 'NN',
-      linkedinProfile: 'NN',
-      websiteURL: 'NN',
-      keyProductCategories: 'NN',
-      productSegmentCapsules: 'NN',
-      priceSegment: 'NN',
-      internationalNicheBrands: 'NN',
-      durationOfPartnership: 'NN',
-      onlineChannel: 'NN',
-      offlineChannel: 'NN',
-      northIndia: 'NN',
-      westIndia: 'NN',
-      southIndia: 'NN',
-      eastIndia: 'NN',
-      strengths: 'NN',
-      weaknesses: 'NN',
-      opportunities: 'NN',
-      threats: 'NN',
-      futureExpansionPlans: 'NN',
-      competitiveBenchmarking: 'NN',
-      additionalComments: 'NN'
+      customerName: 'Customer 10',
+      parentGroup: 'xx',
+      retailFormat: 'xx',
+      regionCountry: 'xx',
+      storeFootprint: 'xx',
+      selfScanningStatus: 'xx',
+      keyContact: 'xx',
+      designation: 'xx',
+      emailAddress: 'xx',
+      phoneWhatsApp: 'xx',
+      linkedinProfile: 'xx',
+      websiteURL: 'xx',
+      primaryMotivation: 'xx',
+      upcomingTriggers: 'xx',
+      shrinkRiskSensitivity: 'xx'
     },
     {
       sNo: 11,
-      companyName: 'Distributor 11',
-      yearEstablished: 'NN',
-      headquarters: 'NN',
-      citiesRegionsCovered: 'NN',
-      ownershipType: 'NN',
-      noOfEmployees: 'NN',
-      revenueTurnover: 'NN',
-      keyContact: 'NN',
-      designation: 'NN',
-      emailAddress: 'NN',
-      phoneWhatsApp: 'NN',
-      linkedinProfile: 'NN',
-      websiteURL: 'NN',
-      keyProductCategories: 'NN',
-      productSegmentCapsules: 'NN',
-      priceSegment: 'NN',
-      internationalNicheBrands: 'NN',
-      durationOfPartnership: 'NN',
-      onlineChannel: 'NN',
-      offlineChannel: 'NN',
-      northIndia: 'NN',
-      westIndia: 'NN',
-      southIndia: 'NN',
-      eastIndia: 'NN',
-      strengths: 'NN',
-      weaknesses: 'NN',
-      opportunities: 'NN',
-      threats: 'NN',
-      futureExpansionPlans: 'NN',
-      competitiveBenchmarking: 'NN',
-      additionalComments: 'NN'
+      customerName: 'Customer 11',
+      parentGroup: 'xx',
+      retailFormat: 'xx',
+      regionCountry: 'xx',
+      storeFootprint: 'xx',
+      selfScanningStatus: 'xx',
+      keyContact: 'xx',
+      designation: 'xx',
+      emailAddress: 'xx',
+      phoneWhatsApp: 'xx',
+      linkedinProfile: 'xx',
+      websiteURL: 'xx',
+      primaryMotivation: 'xx',
+      upcomingTriggers: 'xx',
+      shrinkRiskSensitivity: 'xx'
     },
     {
       sNo: 12,
-      companyName: 'Distributor 12',
-      yearEstablished: 'NN',
-      headquarters: 'NN',
-      citiesRegionsCovered: 'NN',
-      ownershipType: 'NN',
-      noOfEmployees: 'NN',
-      revenueTurnover: 'NN',
-      keyContact: 'NN',
-      designation: 'NN',
-      emailAddress: 'NN',
-      phoneWhatsApp: 'NN',
-      linkedinProfile: 'NN',
-      websiteURL: 'NN',
-      keyProductCategories: 'NN',
-      productSegmentCapsules: 'NN',
-      priceSegment: 'NN',
-      internationalNicheBrands: 'NN',
-      durationOfPartnership: 'NN',
-      onlineChannel: 'NN',
-      offlineChannel: 'NN',
-      northIndia: 'NN',
-      westIndia: 'NN',
-      southIndia: 'NN',
-      eastIndia: 'NN',
-      strengths: 'NN',
-      weaknesses: 'NN',
-      opportunities: 'NN',
-      threats: 'NN',
-      futureExpansionPlans: 'NN',
-      competitiveBenchmarking: 'NN',
-      additionalComments: 'NN'
+      customerName: 'Customer 12',
+      parentGroup: 'xx',
+      retailFormat: 'xx',
+      regionCountry: 'xx',
+      storeFootprint: 'xx',
+      selfScanningStatus: 'xx',
+      keyContact: 'xx',
+      designation: 'xx',
+      emailAddress: 'xx',
+      phoneWhatsApp: 'xx',
+      linkedinProfile: 'xx',
+      websiteURL: 'xx',
+      primaryMotivation: 'xx',
+      upcomingTriggers: 'xx',
+      shrinkRiskSensitivity: 'xx'
+    },
+    {
+      sNo: 13,
+      customerName: 'Customer 13',
+      parentGroup: 'xx',
+      retailFormat: 'xx',
+      regionCountry: 'xx',
+      storeFootprint: 'xx',
+      selfScanningStatus: 'xx',
+      keyContact: 'xx',
+      designation: 'xx',
+      emailAddress: 'xx',
+      phoneWhatsApp: 'xx',
+      linkedinProfile: 'xx',
+      websiteURL: 'xx',
+      primaryMotivation: 'xx',
+      upcomingTriggers: 'xx',
+      shrinkRiskSensitivity: 'xx'
+    },
+    {
+      sNo: 14,
+      customerName: 'Customer 14',
+      parentGroup: 'xx',
+      retailFormat: 'xx',
+      regionCountry: 'xx',
+      storeFootprint: 'xx',
+      selfScanningStatus: 'xx',
+      keyContact: 'xx',
+      designation: 'xx',
+      emailAddress: 'xx',
+      phoneWhatsApp: 'xx',
+      linkedinProfile: 'xx',
+      websiteURL: 'xx',
+      primaryMotivation: 'xx',
+      upcomingTriggers: 'xx',
+      shrinkRiskSensitivity: 'xx'
+    },
+    {
+      sNo: 15,
+      customerName: 'Customer 15',
+      parentGroup: 'xx',
+      retailFormat: 'xx',
+      regionCountry: 'xx',
+      storeFootprint: 'xx',
+      selfScanningStatus: 'xx',
+      keyContact: 'xx',
+      designation: 'xx',
+      emailAddress: 'xx',
+      phoneWhatsApp: 'xx',
+      linkedinProfile: 'xx',
+      websiteURL: 'xx',
+      primaryMotivation: 'xx',
+      upcomingTriggers: 'xx',
+      shrinkRiskSensitivity: 'xx'
+    },
+    {
+      sNo: 16,
+      customerName: 'Customer 16',
+      parentGroup: 'xx',
+      retailFormat: 'xx',
+      regionCountry: 'xx',
+      storeFootprint: 'xx',
+      selfScanningStatus: 'xx',
+      keyContact: 'xx',
+      designation: 'xx',
+      emailAddress: 'xx',
+      phoneWhatsApp: 'xx',
+      linkedinProfile: 'xx',
+      websiteURL: 'xx',
+      primaryMotivation: 'xx',
+      upcomingTriggers: 'xx',
+      shrinkRiskSensitivity: 'xx'
+    },
+    {
+      sNo: 17,
+      customerName: 'Customer 17',
+      parentGroup: 'xx',
+      retailFormat: 'xx',
+      regionCountry: 'xx',
+      storeFootprint: 'xx',
+      selfScanningStatus: 'xx',
+      keyContact: 'xx',
+      designation: 'xx',
+      emailAddress: 'xx',
+      phoneWhatsApp: 'xx',
+      linkedinProfile: 'xx',
+      websiteURL: 'xx',
+      primaryMotivation: 'xx',
+      upcomingTriggers: 'xx',
+      shrinkRiskSensitivity: 'xx'
+    },
+    {
+      sNo: 18,
+      customerName: 'Customer 18',
+      parentGroup: 'xx',
+      retailFormat: 'xx',
+      regionCountry: 'xx',
+      storeFootprint: 'xx',
+      selfScanningStatus: 'xx',
+      keyContact: 'xx',
+      designation: 'xx',
+      emailAddress: 'xx',
+      phoneWhatsApp: 'xx',
+      linkedinProfile: 'xx',
+      websiteURL: 'xx',
+      primaryMotivation: 'xx',
+      upcomingTriggers: 'xx',
+      shrinkRiskSensitivity: 'xx'
     }
   ]
+
+  // Proposition 2 data with Purchasing Behaviour
+  const proposition2Data: CustomerData[] = proposition1Data.map(item => ({
+    ...item,
+    decisionMakers: 'xx',
+    procurementModel: 'xx',
+    budgetApproach: 'xx'
+  }))
+  
+  // Proposition 3 data with Solution Requirements and CMI Insights
+  const proposition3Data: CustomerData[] = proposition1Data.map(item => ({
+    ...item,
+    decisionMakers: 'xx',
+    procurementModel: 'xx',
+    budgetApproach: 'xx',
+    preferredSolutionType: 'xx',
+    preferredModelType: 'xx',
+    preferredTechnology: 'xx',
+    integrationRequirements: 'xx',
+    deploymentIntensity: 'xx',
+    serviceExpectations: 'xx',
+    otherConstraints: 'xx',
+    customerBenchmarking: 'xx',
+    additionalComments: 'xx'
+  }))
 
   const getCurrentData = () => {
     if (activeProposition === 'proposition2') {
@@ -843,17 +431,20 @@ export function CustomerIntelligence({ onNavigate }: CustomerIntelligenceProps) 
 
   const exportToCSV = () => {
     const data = getCurrentData()
-    const headers = ['S.No.', 'Company Name', 'Year Established', 'Headquarters', 'Cities / Regions Covered', 
-                     'Ownership Type (Local / Regional / Global)', 'No. of Employees (est.liff available)', 
-                     'Revenue/Turnover(if available) 2024', 'Key Contact Person', 'Designation / Role', 
-                     'Email', 'Address (verified / generic)', 'Phone / WhatsApp Number', 'LinkedIn Profile', 'Website URL']
+    const headers = ['S.No.', 'Customer / Retailer Name', 'Parent Group / Brand', 'Retail Format', 
+                     'Region / Country Presence', 'Store Footprint', 'Current Self-Scanning Status',
+                     'Key Contact Person', 'Designation / Function', 'Email Address', 
+                     'Phone / WhatsApp Number', 'LinkedIn Profile', 'Website URL',
+                     'Primary Motivation for Self-Scanning', 'Upcoming Triggers / Initiatives',
+                     'Shrink / Fraud Risk Sensitivity']
     
     const csvContent = [
       headers.join(','),
       ...data.map(row => 
-        [row.sNo, row.companyName, row.yearEstablished, row.headquarters, row.citiesRegionsCovered,
-         row.ownershipType, row.noOfEmployees, row.revenueTurnover, row.keyContact, row.designation,
-         row.email, row.address, row.phoneWhatsApp, row.linkedinProfile, row.websiteURL]
+        [row.sNo, row.customerName, row.parentGroup, row.retailFormat, row.regionCountry,
+         row.storeFootprint, row.selfScanningStatus, row.keyContact, row.designation,
+         row.emailAddress, row.phoneWhatsApp, row.linkedinProfile, row.websiteURL,
+         row.primaryMotivation, row.upcomingTriggers, row.shrinkRiskSensitivity]
           .map(val => `"${String(val).replace(/"/g, '""')}"`)
           .join(',')
       )
@@ -862,7 +453,7 @@ export function CustomerIntelligence({ onNavigate }: CustomerIntelligenceProps) 
     const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' })
     const link = document.createElement('a')
     link.href = URL.createObjectURL(blob)
-    link.download = `probiotics_distributors_${activeProposition}.csv`
+    link.download = `customer_intelligence_${activeProposition}.csv`
     link.click()
   }
 
@@ -888,10 +479,10 @@ export function CustomerIntelligence({ onNavigate }: CustomerIntelligenceProps) 
         className="mb-8 text-center"
       >
         <h1 className="text-4xl font-bold text-text-primary-light dark:text-text-primary-dark mb-3">
-          INDIAN PROBIOTICS DISTRIBUTORS INTELLIGENCE DATABASE
+          GLOBAL RETAIL SELF SCANNING SOLUTION MARKET DATABASE
         </h1>
         <p className="text-lg text-text-secondary-light dark:text-text-secondary-dark">
-          Verified directory and insight on Probiotics product distributors across the India
+          Comprehensive intelligence on global retail self-scanning solution market
         </p>
       </motion.div>
 
@@ -937,7 +528,7 @@ export function CustomerIntelligence({ onNavigate }: CustomerIntelligenceProps) 
         </div>
       </div>
 
-      {/* Distributors Table */}
+      {/* Customer Table */}
       <div className={`p-8 rounded-2xl shadow-xl ${isDark ? 'bg-navy-card border-2 border-navy-light' : 'bg-white border-2 border-gray-300'}`}>
         {/* Top Scrollbar */}
         <div 
@@ -964,142 +555,171 @@ export function CustomerIntelligence({ onNavigate }: CustomerIntelligenceProps) 
           <table className="w-full border-collapse text-sm min-w-max">
             <thead>
               <tr className={`border-b-2 ${isDark ? 'border-navy-light' : 'border-gray-300'}`}>
-                <th colSpan={8} className={`px-3 py-3 text-center font-bold ${isDark ? 'bg-orange-200 text-gray-900' : 'bg-orange-100 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                  COMPANY INFORMATION
+                <th colSpan={7} className={`px-3 py-3 text-center font-bold ${isDark ? 'bg-purple-200 text-gray-900' : 'bg-purple-100 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
+                  Customer Information
                 </th>
-                <th colSpan={6} className={`px-3 py-3 text-center font-bold ${isDark ? 'bg-cyan-200 text-gray-900' : 'bg-cyan-100 text-gray-900'} ${(activeProposition === 'proposition2' || activeProposition === 'proposition3') ? 'border-r' : ''} ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                  CONTACT DETAILS
+                <th colSpan={6} className={`px-3 py-3 text-center font-bold ${isDark ? 'bg-cyan-200 text-gray-900' : 'bg-cyan-100 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
+                  Contact Details
+                </th>
+                <th colSpan={3} className={`px-3 py-3 text-center font-bold ${isDark ? 'bg-pink-200 text-gray-900' : 'bg-pink-100 text-gray-900'} ${(activeProposition === 'proposition2' || activeProposition === 'proposition3') ? 'border-r' : ''} ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
+                  Personal/ Professional Branding Drivers
                 </th>
                 {(activeProposition === 'proposition2' || activeProposition === 'proposition3') && (
-                  <th colSpan={3} className={`px-3 py-3 text-center font-bold ${isDark ? 'bg-purple-200 text-gray-900' : 'bg-purple-100 text-gray-900'} ${activeProposition === 'proposition3' ? 'border-r' : ''} ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                    PRODUCT PORTFOLIO
+                  <th colSpan={3} className={`px-3 py-3 text-center font-bold ${isDark ? 'bg-orange-200 text-gray-900' : 'bg-orange-100 text-gray-900'} ${activeProposition === 'proposition3' ? 'border-r' : ''} ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
+                    Purchasing Behaviour
                   </th>
                 )}
                 {activeProposition === 'proposition3' && (
                   <>
-                    <th colSpan={3} className={`px-3 py-3 text-center font-bold ${isDark ? 'bg-pink-200 text-gray-900' : 'bg-pink-100 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                      BRANDS DISTRIBUTED
+                    <th colSpan={7} className={`px-3 py-3 text-center font-bold ${isDark ? 'bg-yellow-200 text-gray-900' : 'bg-yellow-100 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
+                      Solution Requirements
                     </th>
-                    <th colSpan={2} className={`px-3 py-3 text-center font-bold ${isDark ? 'bg-yellow-200 text-gray-900' : 'bg-yellow-100 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                      DISTRIBUTION CHANNELS
-                    </th>
-                    <th colSpan={4} className={`px-3 py-3 text-center font-bold ${isDark ? 'bg-green-200 text-gray-900' : 'bg-green-100 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                      REGIONAL COVERAGE
-                    </th>
-                    <th colSpan={4} className={`px-3 py-3 text-center font-bold ${isDark ? 'bg-blue-200 text-gray-900' : 'bg-blue-100 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                      SWOT ANALYSIS
-                    </th>
-                    <th colSpan={3} className={`px-3 py-3 text-center font-bold ${isDark ? 'bg-indigo-200 text-gray-900' : 'bg-indigo-100 text-gray-900'}`}>
-                      FUTURE & BENCHMARKING
+                    <th colSpan={2} className={`px-3 py-3 text-center font-bold ${isDark ? 'bg-blue-200 text-gray-900' : 'bg-blue-100 text-gray-900'}`}>
+                      CMI Insights
                     </th>
                   </>
                 )}
               </tr>
               <tr className={`border-b-2 ${isDark ? 'border-navy-light' : 'border-gray-300'}`}>
-                <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-orange-100 text-gray-900' : 'bg-orange-50 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
+                <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-purple-100 text-gray-900' : 'bg-purple-50 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
                   S.No.
                 </th>
-                <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-orange-100 text-gray-900' : 'bg-orange-50 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                  Company Name
+                <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-purple-100 text-gray-900' : 'bg-purple-50 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
+                  Customer / Retailer Name
                 </th>
-                <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-orange-100 text-gray-900' : 'bg-orange-50 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                  Year Established
+                <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-purple-100 text-gray-900' : 'bg-purple-50 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
+                  Parent Group / Brand
                 </th>
-                <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-orange-100 text-gray-900' : 'bg-orange-50 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                  Headquarters
+                <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-purple-100 text-gray-900' : 'bg-purple-50 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
+                  <div>Retail Format</div>
+                  <div className="text-xs">(Supermarket/Convenience/</div>
+                  <div className="text-xs">Specialty/Dept Store/Pharmacy)</div>
                 </th>
-                <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-orange-100 text-gray-900' : 'bg-orange-50 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                  Cities / Regions Covered
+                <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-purple-100 text-gray-900' : 'bg-purple-50 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
+                  <div>Region / Country</div>
+                  <div>Presence</div>
                 </th>
-                <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-orange-100 text-gray-900' : 'bg-orange-50 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                  Ownership Type (Local / Regional / Global)
+                <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-purple-100 text-gray-900' : 'bg-purple-50 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
+                  <div>Store Footprint</div>
+                  <div className="text-xs">(No. of stores)</div>
                 </th>
-                <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-orange-100 text-gray-900' : 'bg-orange-50 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                  No. of Employees (est.liff available)
-                </th>
-                <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-orange-100 text-gray-900' : 'bg-orange-50 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                  Revenue/Turnover(if available) 2024
+                <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-purple-100 text-gray-900' : 'bg-purple-50 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
+                  <div>Current Self-Scanning</div>
+                  <div>Status</div>
+                  <div className="text-xs">(None / Pilot / Partial</div>
+                  <div className="text-xs">Rollout / Full Rollout)</div>
                 </th>
                 <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-cyan-100 text-gray-900' : 'bg-cyan-50 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
                   Key Contact Person
                 </th>
                 <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-cyan-100 text-gray-900' : 'bg-cyan-50 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                  Designation / Role
+                  <div>Designation / Function</div>
+                  <div className="text-xs">(Store Ops / IT-Digital /</div>
+                  <div className="text-xs">Innovation / Loss Prevention /</div>
+                  <div className="text-xs">Procurement / Finance)</div>
                 </th>
                 <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-cyan-100 text-gray-900' : 'bg-cyan-50 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                  Email Address (verified / generic)
+                  Email Address
                 </th>
                 <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-cyan-100 text-gray-900' : 'bg-cyan-50 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                  Phone / WhatsApp Number
+                  Phone/ WhatsApp Number
                 </th>
                 <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-cyan-100 text-gray-900' : 'bg-cyan-50 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
                   LinkedIn Profile
                 </th>
-                <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-cyan-100 text-gray-900' : 'bg-cyan-50 text-gray-900'} ${(activeProposition === 'proposition2' || activeProposition === 'proposition3') ? 'border-r' : ''} ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
+                <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-cyan-100 text-gray-900' : 'bg-cyan-50 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
                   Website URL
+                </th>
+                <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-pink-100 text-gray-900' : 'bg-pink-50 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
+                  <div>Primary Motivation for</div>
+                  <div>Self-Scanning</div>
+                  <div className="text-xs">(speed, labor reduction,</div>
+                  <div className="text-xs">loyalty data, contactless,</div>
+                  <div className="text-xs">basket uplift)</div>
+                </th>
+                <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-pink-100 text-gray-900' : 'bg-pink-50 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
+                  <div>Upcoming Triggers /</div>
+                  <div>Initiatives</div>
+                  <div className="text-xs">(new stores, refurb, digital</div>
+                  <div className="text-xs">program, cashless push,</div>
+                  <div className="text-xs">labor constraints)</div>
+                </th>
+                <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-pink-100 text-gray-900' : 'bg-pink-50 text-gray-900'} ${(activeProposition === 'proposition2' || activeProposition === 'proposition3') ? 'border-r' : ''} ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
+                  <div>Shrink / Fraud Risk</div>
+                  <div>Sensitivity</div>
+                  <div className="text-xs">(High/Med/Low)</div>
                 </th>
                 {(activeProposition === 'proposition2' || activeProposition === 'proposition3') && (
                   <>
-                    <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-purple-100 text-gray-900' : 'bg-purple-50 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                      {activeProposition === 'proposition3' ? 'Core Product Categories (Probiotics from(Probiotic Strains))' : 'Key Product Categories (Lactobacillus / Bifidobacterium / Saccharomyces)'}
+                    <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-orange-100 text-gray-900' : 'bg-orange-50 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
+                      <div>Decision Makers</div>
+                      <div className="text-xs">(CIO/CTO, Head Store Ops,</div>
+                      <div className="text-xs">Digital, LP, Procurement,</div>
+                      <div className="text-xs">CFO, CEO)</div>
                     </th>
-                    <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-purple-100 text-gray-900' : 'bg-purple-50 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                      Product Segment {activeProposition === 'proposition3' ? '(Capsules / Powder / Sachet)' : 'Capsules / Sachet / Powder'}
+                    <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-orange-100 text-gray-900' : 'bg-orange-50 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
+                      <div>Procurement Model</div>
+                      <div className="text-xs">(Direct buy / Lease / SaaS /</div>
+                      <div className="text-xs">Managed service /</div>
+                      <div className="text-xs">via POS integrator)</div>
                     </th>
-                    <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-purple-100 text-gray-900' : 'bg-purple-50 text-gray-900'} ${activeProposition === 'proposition3' ? 'border-r' : ''} ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                      Price Segment (Premium / Mid / Budget)
+                    <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-orange-100 text-gray-900' : 'bg-orange-50 text-gray-900'} ${activeProposition === 'proposition3' ? 'border-r' : ''} ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
+                      <div>Budget Approach / Tier</div>
+                      <div className="text-xs">(Capex/Opex/Hybrid;</div>
+                      <div className="text-xs">Entry/Mid/Premium)</div>
                     </th>
                   </>
                 )}
                 {activeProposition === 'proposition3' && (
                   <>
-                    <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-pink-100 text-gray-900' : 'bg-pink-50 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                      Key International / Local Brands Represented
-                    </th>
-                    <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-pink-100 text-gray-900' : 'bg-pink-50 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                      Exclusive or Non-exclusive Partnerships (if available)
-                    </th>
-                    <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-pink-100 text-gray-900' : 'bg-pink-50 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                      Duration of Brand Partnerships (if known)
+                    <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-yellow-100 text-gray-900' : 'bg-yellow-50 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
+                      <div>Preferred Solution Type</div>
+                      <div className="text-xs">(Fixed kiosk;</div>
+                      <div className="text-xs">Smartphone/presentation;</div>
+                      <div className="text-xs">Mobile: dedicated/</div>
+                      <div className="text-xs">smartphone/smart-cart)</div>
                     </th>
                     <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-yellow-100 text-gray-900' : 'bg-yellow-50 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                      Online Channel
+                      <div>Preferred Model Type</div>
+                      <div className="text-xs">(Cash / Cashless / Both)</div>
                     </th>
                     <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-yellow-100 text-gray-900' : 'bg-yellow-50 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                      Offline Channel
+                      <div>Preferred Technology</div>
+                      <div className="text-xs">(Barcode / RFID /</div>
+                      <div className="text-xs">CV-AI / NFC / Mix)</div>
                     </th>
-                    <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-green-100 text-gray-900' : 'bg-green-50 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                      North India (Delhi, Haryana, Punjab, Uttar Pradesh)
+                    <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-yellow-100 text-gray-900' : 'bg-yellow-50 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
+                      <div>Integration Requirements</div>
+                      <div className="text-xs">(POS/ERP/logging/app;</div>
+                      <div className="text-xs">existing vendors)</div>
                     </th>
-                    <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-green-100 text-gray-900' : 'bg-green-50 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                      West India (Maharashtra, Gujarat, Madhya Pradesh, etc.)
+                    <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-yellow-100 text-gray-900' : 'bg-yellow-50 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
+                      <div>Deployment Intensity /</div>
+                      <div>Timeline</div>
+                      <div className="text-xs">(Pilot phased 6-12 mo /</div>
+                      <div className="text-xs">chainwide 1-3 yrs)</div>
                     </th>
-                    <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-green-100 text-gray-900' : 'bg-green-50 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                      South India (Karnataka, Tamil Nadu, Telangana, Andhra Pradesh, Kerala)
+                    <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-yellow-100 text-gray-900' : 'bg-yellow-50 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
+                      <div>Service Expectations</div>
+                      <div className="text-xs">(install, maintenance,</div>
+                      <div className="text-xs">analytics, training,</div>
+                      <div className="text-xs">LP/shrink features)</div>
                     </th>
-                    <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-green-100 text-gray-900' : 'bg-green-50 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                      East India (West Bengal, Odisha, Bihar, Jharkhand)
+                    <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-yellow-100 text-gray-900' : 'bg-yellow-50 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
+                      <div>Other Constraints</div>
+                      <div className="text-xs">(data privacy, onboarding,</div>
+                      <div className="text-xs">vs. labor rules,</div>
+                      <div className="text-xs">accessibility, space, local)</div>
                     </th>
                     <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-blue-100 text-gray-900' : 'bg-blue-50 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                      Strengths:
+                      <div>Customer Benchmarking</div>
+                      <div>Summary</div>
+                      <div className="text-xs">(Potential Customers/</div>
+                      <div className="text-xs">Peer Group)</div>
                     </th>
-                    <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-blue-100 text-gray-900' : 'bg-blue-50 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                      Weaknesses:
-                    </th>
-                    <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-blue-100 text-gray-900' : 'bg-blue-50 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                      Opportunities:
-                    </th>
-                    <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-blue-100 text-gray-900' : 'bg-blue-50 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                      Threats:
-                    </th>
-                    <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-indigo-100 text-gray-900' : 'bg-indigo-50 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                      Future Expansion Plans
-                    </th>
-                    <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-indigo-100 text-gray-900' : 'bg-indigo-50 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                      Competitive Benchmarking Summary (Top-tier / Mid-tier / Niche Emerging national-distributor / wholesaler / Likely Mid-tier distributor)
-                    </th>
-                    <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-indigo-100 text-gray-900' : 'bg-indigo-50 text-gray-900'}`}>
-                      Additional Comments / Notes By CMI team
+                    <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-blue-100 text-gray-900' : 'bg-blue-50 text-gray-900'}`}>
+                      <div>Additional Comments/</div>
+                      <div>Notes by CMI Team</div>
                     </th>
                   </>
                 )}
@@ -1115,25 +735,22 @@ export function CustomerIntelligence({ onNavigate }: CustomerIntelligenceProps) 
                     {row.sNo}
                   </td>
                   <td className={`px-3 py-3 text-text-secondary-light dark:text-text-secondary-dark border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                    {row.companyName}
+                    {row.customerName}
                   </td>
                   <td className={`px-3 py-3 text-center text-text-secondary-light dark:text-text-secondary-dark border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                    {row.yearEstablished}
+                    {row.parentGroup}
                   </td>
                   <td className={`px-3 py-3 text-text-secondary-light dark:text-text-secondary-dark border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                    {row.headquarters}
+                    {row.retailFormat}
                   </td>
                   <td className={`px-3 py-3 text-text-secondary-light dark:text-text-secondary-dark border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                    {row.citiesRegionsCovered}
-                  </td>
-                  <td className={`px-3 py-3 text-text-secondary-light dark:text-text-secondary-dark border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                    {row.ownershipType}
+                    {row.regionCountry}
                   </td>
                   <td className={`px-3 py-3 text-center text-text-secondary-light dark:text-text-secondary-dark border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                    {row.noOfEmployees}
+                    {row.storeFootprint}
                   </td>
                   <td className={`px-3 py-3 text-center text-text-secondary-light dark:text-text-secondary-dark border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                    {row.revenueTurnover}
+                    {row.selfScanningStatus}
                   </td>
                   <td className={`px-3 py-3 text-text-secondary-light dark:text-text-secondary-dark border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
                     {row.keyContact}
@@ -1142,7 +759,7 @@ export function CustomerIntelligence({ onNavigate }: CustomerIntelligenceProps) 
                     {row.designation}
                   </td>
                   <td className={`px-3 py-3 text-text-secondary-light dark:text-text-secondary-dark border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                    {row.emailAddress !== 'NA' ? (
+                    {row.emailAddress !== 'xx' ? (
                       <a href={`mailto:${row.emailAddress}`} className="text-electric-blue hover:underline">
                         {row.emailAddress}
                       </a>
@@ -1152,81 +769,69 @@ export function CustomerIntelligence({ onNavigate }: CustomerIntelligenceProps) 
                     {row.phoneWhatsApp}
                   </td>
                   <td className={`px-3 py-3 text-text-secondary-light dark:text-text-secondary-dark border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                    {row.linkedinProfile !== 'NA' ? (
+                    {row.linkedinProfile !== 'xx' ? (
                       <a href={`https://${row.linkedinProfile}`} target="_blank" rel="noopener noreferrer" className="text-electric-blue hover:underline text-xs">
                         {row.linkedinProfile}
                       </a>
                     ) : row.linkedinProfile}
                   </td>
-                  <td className={`px-3 py-3 text-text-secondary-light dark:text-text-secondary-dark ${(activeProposition === 'proposition2' || activeProposition === 'proposition3') ? 'border-r' : ''} ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                    {row.websiteURL !== 'NA' ? (
+                  <td className={`px-3 py-3 text-text-secondary-light dark:text-text-secondary-dark border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
+                    {row.websiteURL !== 'xx' ? (
                       <a href={`https://${row.websiteURL}`} target="_blank" rel="noopener noreferrer" className="text-electric-blue hover:underline text-xs">
                         {row.websiteURL}
                       </a>
                     ) : row.websiteURL}
                   </td>
+                  <td className={`px-3 py-3 text-text-secondary-light dark:text-text-secondary-dark border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
+                    {row.primaryMotivation}
+                  </td>
+                  <td className={`px-3 py-3 text-text-secondary-light dark:text-text-secondary-dark border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
+                    {row.upcomingTriggers}
+                  </td>
+                  <td className={`px-3 py-3 text-center text-text-secondary-light dark:text-text-secondary-dark ${(activeProposition === 'proposition2' || activeProposition === 'proposition3') ? 'border-r' : ''} ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
+                    {row.shrinkRiskSensitivity}
+                  </td>
                   {(activeProposition === 'proposition2' || activeProposition === 'proposition3') && (
                     <>
                       <td className={`px-3 py-3 text-text-secondary-light dark:text-text-secondary-dark border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                        {row.keyProductCategories || 'NN'}
+                        {row.decisionMakers || 'xx'}
                       </td>
                       <td className={`px-3 py-3 text-text-secondary-light dark:text-text-secondary-dark border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                        {row.productSegmentCapsules || 'NN'}
+                        {row.procurementModel || 'xx'}
                       </td>
                       <td className={`px-3 py-3 text-center text-text-secondary-light dark:text-text-secondary-dark ${activeProposition === 'proposition3' ? 'border-r' : ''} ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                        {row.priceSegment || 'NN'}
+                        {row.budgetApproach || 'xx'}
                       </td>
                     </>
                   )}
                   {activeProposition === 'proposition3' && (
                     <>
                       <td className={`px-3 py-3 text-text-secondary-light dark:text-text-secondary-dark border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                        {row.keyInternationalLocalBrands || 'NN'}
+                        {row.preferredSolutionType || 'xx'}
                       </td>
                       <td className={`px-3 py-3 text-text-secondary-light dark:text-text-secondary-dark border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                        {row.exclusiveNonExclusivePartnership || 'NN'}
+                        {row.preferredModelType || 'xx'}
                       </td>
                       <td className={`px-3 py-3 text-text-secondary-light dark:text-text-secondary-dark border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                        {row.durationOfBrandPartnerships || 'NN'}
+                        {row.preferredTechnology || 'xx'}
                       </td>
                       <td className={`px-3 py-3 text-text-secondary-light dark:text-text-secondary-dark border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                        {row.onlineChannel || 'NN'}
+                        {row.integrationRequirements || 'xx'}
                       </td>
                       <td className={`px-3 py-3 text-text-secondary-light dark:text-text-secondary-dark border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                        {row.offlineChannel || 'NN'}
+                        {row.deploymentIntensity || 'xx'}
                       </td>
-                      <td className={`px-3 py-3 text-center text-text-secondary-light dark:text-text-secondary-dark border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                        {row.northIndia || 'NN'}
+                      <td className={`px-3 py-3 text-text-secondary-light dark:text-text-secondary-dark border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
+                        {row.serviceExpectations || 'xx'}
                       </td>
-                      <td className={`px-3 py-3 text-center text-text-secondary-light dark:text-text-secondary-dark border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                        {row.westIndia || 'NN'}
+                      <td className={`px-3 py-3 text-text-secondary-light dark:text-text-secondary-dark border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
+                        {row.otherConstraints || 'xx'}
                       </td>
-                      <td className={`px-3 py-3 text-center text-text-secondary-light dark:text-text-secondary-dark border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                        {row.southIndia || 'NN'}
+                      <td className={`px-3 py-3 text-text-secondary-light dark:text-text-secondary-dark border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
+                        {row.customerBenchmarking || 'xx'}
                       </td>
-                      <td className={`px-3 py-3 text-center text-text-secondary-light dark:text-text-secondary-dark border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                        {row.eastIndia || 'NN'}
-                      </td>
-                      <td className={`px-3 py-3 text-text-secondary-light dark:text-text-secondary-dark border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`} style={{ maxWidth: '300px', whiteSpace: 'normal', wordWrap: 'break-word' }}>
-                        {row.strengths || 'NN'}
-                      </td>
-                      <td className={`px-3 py-3 text-text-secondary-light dark:text-text-secondary-dark border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`} style={{ maxWidth: '300px', whiteSpace: 'normal', wordWrap: 'break-word' }}>
-                        {row.weaknesses || 'NN'}
-                      </td>
-                      <td className={`px-3 py-3 text-text-secondary-light dark:text-text-secondary-dark border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`} style={{ maxWidth: '300px', whiteSpace: 'normal', wordWrap: 'break-word' }}>
-                        {row.opportunities || 'NN'}
-                      </td>
-                      <td className={`px-3 py-3 text-text-secondary-light dark:text-text-secondary-dark border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`} style={{ maxWidth: '300px', whiteSpace: 'normal', wordWrap: 'break-word' }}>
-                        {row.threats || 'NN'}
-                      </td>
-                      <td className={`px-3 py-3 text-center text-text-secondary-light dark:text-text-secondary-dark border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
-                        {row.futureExpansionPlans || 'NN'}
-                      </td>
-                      <td className={`px-3 py-3 text-text-secondary-light dark:text-text-secondary-dark border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`} style={{ maxWidth: '250px', whiteSpace: 'normal', wordWrap: 'break-word' }}>
-                        {row.competitiveBenchmarking || 'NN'}
-                      </td>
-                      <td className={`px-3 py-3 text-text-secondary-light dark:text-text-secondary-dark`} style={{ maxWidth: '250px', whiteSpace: 'normal', wordWrap: 'break-word' }}>
-                        {row.additionalComments || 'NN'}
+                      <td className={`px-3 py-3 text-text-secondary-light dark:text-text-secondary-dark`}>
+                        {row.additionalComments || 'xx'}
                       </td>
                     </>
                   )}
